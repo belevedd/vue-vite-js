@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { BASE_URL, TIMEOUT } from './config'
+import { BASE_URL, TIME_OUT } from './config'
 
 class myRequest {
   constructor(baseURL, timeout = 10000) {
@@ -32,4 +32,4 @@ class myRequest {
   }
 }
 
-export default new myRequest(BASE_URL, TIMEOUT)
+export default new myRequest(BASE_URL, TIME_OUT)
