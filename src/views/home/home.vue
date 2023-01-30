@@ -2,7 +2,7 @@
   <div class="home">
     <h2>home</h2>
     <ul>
-      <template v-for="(item, index) in cbcList">
+      <template v-for="(item, index) in cbcList" :key="index">
         <li>{{ item.certificateLocation }}</li>
       </template>
     </ul>
