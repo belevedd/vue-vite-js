@@ -1,0 +1,44 @@
+{
+  "id": "3873514",
+  "name": "testIcon",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "测试icon图标",
+  "glyphs": [
+    {
+      "icon_id": "33851250",
+      "name": "档案管理",
+      "font_class": "danganguanli",
+      "unicode": "e74f",
+      "unicode_decimal": 59215
+    },
+    {
+      "icon_id": "33851265",
+      "name": "应诉管理",
+      "font_class": "yingsuguanli",
+      "unicode": "e75a",
+      "unicode_decimal": 59226
+    },
+    {
+      "icon_id": "33851267",
+      "name": "资产管理",
+      "font_class": "zichanguanli",
+      "unicode": "e75c",
+      "unicode_decimal": 59228
+    },
+    {
+      "icon_id": "33851540",
+      "name": "系统设置",
+      "font_class": "xitongshezhi",
+      "unicode": "e75f",
+      "unicode_decimal": 59231
+    },
+    {
+      "icon_id": "33851248",
+      "name": "部门出入管理",
+      "font_class": "bumenchuruguanli",
+      "unicode": "e74d",
+      "unicode_decimal": 59213
+    }
+  ]
+}
