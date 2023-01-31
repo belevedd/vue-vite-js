@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h2>home</h2>
+    <i class="icon-danganguanli" style="font-size: 30px; color: #f00"></i>
     <ul>
       <template v-for="(item, index) in cbcList" :key="index">
         <li>{{ item.certificateLocation }}</li>
