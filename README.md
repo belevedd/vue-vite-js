@@ -12,3 +12,5 @@
   - 添加了 loading 组件，请求时加载 loading 动画，在响应成功/失败时移除 loading 动画。
 - dayjs 日期格式库
 - underscore js 辅助函数库
+- assets/icon 添加阿里巴巴矢量图标库
+  - 详细步骤查看 https://blog.csdn.net/JavaLLU/article/details/118965055
