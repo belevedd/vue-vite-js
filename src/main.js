@@ -5,6 +5,7 @@ import pinia from './stores'
 
 import 'normalize.css'
 import './assets/css/index.css'
+import '@/assets/icon/iconfont.css'
 
 const app = createApp(App)
 app.use(router)
