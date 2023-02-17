@@ -14,3 +14,4 @@
 - underscore js 辅助函数库
 - assets/icon 添加阿里巴巴矢量图标库
   - 详细步骤查看 https://blog.csdn.net/JavaLLU/article/details/118965055
+- swiper 轮播图
