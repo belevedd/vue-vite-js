@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^1.2.6",
+    "base-64": "^1.0.0",
     "dayjs": "^1.11.7",
     "element-plus": "^2.2.28",
     "normalize.css": "^8.0.1",
