@@ -1,70 +1,66 @@
 <template>
   <div class="login">
-    <h2>login</h2>
-    <el-row class="mb-4">
-      <el-button>
-        <i class="icon"><i-ep-search /></i>
-        Default
-      </el-button>
-      <el-button type="primary">Primary</el-button>
-      <el-button type="success">Success</el-button>
-      <el-button type="info">Info</el-button>
-      <el-button type="warning">Warning</el-button>
-      <el-button type="danger">Danger</el-button>
-    </el-row>
-    <div class="my-swiper">
-      <swiper
-        class="my-swiper"
-        :modules="modules"
-        :slides-per-view="1"
-        :space-between="50"
-        navigation
-        :pagination="{ clickable: true }"
-        :scrollbar="{ draggable: true }"
-        @swiper="onSwiper"
-        @slideChange="onSlideChange"
-      >
-        <swiper-slide class="my-swiper-slide">Slide 1</swiper-slide>
-        <swiper-slide class="my-swiper-slide">Slide 2</swiper-slide>
-        <swiper-slide class="my-swiper-slide">Slide 3</swiper-slide>
-      </swiper>
-    </div>
+    <login
+      :login-form-value="loginFormValue"
+      @submitBtnClick="submitClick"
+      @registerBtnClick="registerClick"
+    />
   </div>
 </template>
 
 <script setup>
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+// 引入组件
+import Login from '@/components/login/login.vue'
+// 引入pinia数据
+import useLoginStore from '@/stores/modules/login'
+// 引入ElMessage
+import { ElMessage } from 'element-plus'
+import { throttle } from 'underscore'
 
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue'
+// 定义pinia数据
+const loginStore = useLoginStore()
 
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
+// 定义登录表单数据值
+const loginFormValue = reactive({
+  account: '',
+  password: '',
+  isKeep: false,
+})
 
-const onSwiper = (swiper) => {
-  console.log(swiper)
+// 接收子组件事件 (带节流)
+const submitClick = throttle((loginData) => {
+  loginStore.fetchLoginData(loginData).then((res) => {
+    if (res.code === 200) {
+      ElMessage({
+        message: res.msg,
+        type: 'success',
+      })
+    } else if (res.code === 400) {
+      ElMessage.error(res.msg)
+    }
+  })
+}, 2000)
+const registerClick = () => {
+  loginStore.jumpRegisterPage()
 }
-const onSlideChange = () => {
-  console.log('slide change')
-}
-const modules = [Navigation, Pagination, Scrollbar, A11y]
+
+// 判断用户是否记住密码
+loginStore.loadLocalLogin().then((userData) => {
+  if (userData) {
+    loginFormValue.account = userData?.account
+    loginFormValue.password = userData?.password
+    loginFormValue.isKeep = true
+  }
+})
 </script>
 
 <style lang="less" scoped>
-.my-swiper {
-  width: 700px;
-  height: 300px;
-
-  .my-swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url('@/assets/img/common/bg.jpg') center/cover no-repeat;
 }
 </style>
