@@ -1,5 +1,8 @@
 :root {
   --primary-color: #ff9854;
+  /* 登录样式 */
+  --login-text-color: #24b2ec;
+  --login-background-color: rgba(0, 18, 94, 0.7);
 
   /* 全局修改: 任何地方只要用到-van-tabbar-item-icon-size都会被修改掉 */
   /* --van-tabbar-item-icon-size: 30px !important; */
