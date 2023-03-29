@@ -33,7 +33,7 @@ const props = defineProps({
       isVisible: false,
       title: '提示',
       text: '提示内容',
-      backBtnText: '返回',
+      backBtnText: '取消',
       commitBtnText: '确认',
     }),
   },
@@ -48,9 +48,9 @@ const { style } = mainStore
 const btnBackColor = style.color.btnBackColor
 const btnCommitColor = style.color.btnPrimaryColor
 
-// 返回按钮点击事件
+// 取消按钮点击事件
 const backBtnClick = () => {
-  emits('backBtnClick', '点击返回按钮')
+  emits('backBtnClick', '点击取消按钮')
 }
 // 确认按钮点击事件
 const commitBtnClick = () => {
