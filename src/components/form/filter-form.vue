@@ -48,6 +48,17 @@
           />
         </el-select>
       </div>
+      <div v-else-if="item.type === 'date-month'" class="item date-month">
+        <span :style="{ width: filterSpanWidth }">{{ item.text }}</span>
+        <el-date-picker
+          style="width: 250px"
+          v-model="filterForm[item.field]"
+          type="month"
+          value-format="YYYY-MM"
+          :placeholder="item.placeholder"
+          @change="changeForm()"
+        />
+      </div>
       <div v-else-if="item.type === 'date-picker'" class="item">
         <span :style="{ width: filterSpanWidth }">{{ item.text }}</span>
         <el-date-picker
@@ -183,10 +194,11 @@ defineExpose({
   box-sizing: border-box;
 
   .item {
-    flex: 0 0 24%;
+    // flex: 0 0 25%;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    width: 343px;
     margin: 5px 0;
 
     span {
@@ -196,7 +208,8 @@ defineExpose({
     }
   }
   .item-other {
-    flex: 0 0 24%;
+    // flex: 0 0 25%;
+    width: 343px;
   }
 }
 </style>
