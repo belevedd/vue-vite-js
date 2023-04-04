@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import router from '@/router'
-import { formatObjectKey } from '@/utils/format-object'
+import { formatObjectKey } from '@/utils/format/format-object'
 
 const useRegisterStore = defineStore('register', {
   state: () => ({}),
