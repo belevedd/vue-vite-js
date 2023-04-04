@@ -11,3 +11,9 @@
 body {
   font-size: 14px;
 }
+
+/* 页面按钮图标样式 */
+.btn-item .icon {
+  font-size: 12px;
+  margin-right: 5px;
+}
