@@ -22,8 +22,8 @@ const useLoginStore = defineStore('login', {
         } else {
           localStorage.removeItem('user')
         }
-        // 登录成功 路由跳转到驾驶舱
-        router.push('/screen')
+        // 登录成功 路由跳转
+        router.push('/home')
         const data = {
           code: 200,
           msg: '登录成功',
