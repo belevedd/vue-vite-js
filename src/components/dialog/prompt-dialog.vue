@@ -9,10 +9,16 @@
       <div class="dialog-text">{{ dialogData.text }}</div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button :color="btnBackColor" @click="backBtnClick()">
+          <el-button
+            :color="commonBtnColor.btnBackColor"
+            @click="backBtnClick()"
+          >
             <span>{{ dialogData.backBtnText }}</span>
           </el-button>
-          <el-button :color="btnCommitColor" @click="commitBtnClick()">
+          <el-button
+            :color="commonBtnColor.btnPrimaryColor"
+            @click="commitBtnClick()"
+          >
             <span>{{ dialogData.commitBtnText }}</span>
           </el-button>
         </span>
@@ -22,8 +28,8 @@
 </template>
 
 <script setup>
-/*---- 引入pinia状态管理数据 ----*/
-import useMainStore from '@/stores/modules/main'
+/*----- 引入配置项 -----*/
+import { commonBtnColor } from '@/config/common/style'
 
 // 接受父组件传递过来的值
 const props = defineProps({
@@ -40,13 +46,6 @@ const props = defineProps({
 })
 // 子传父 绑定事件
 const emits = defineEmits(['backBtnClick', 'commitBtnClick'])
-
-/*---- 获取pinia状态管理数据 ----*/
-// 获取useMainStore数据
-const mainStore = useMainStore()
-const { style } = mainStore
-const btnBackColor = style.color.btnBackColor
-const btnCommitColor = style.color.btnPrimaryColor
 
 // 取消按钮点击事件
 const backBtnClick = () => {
