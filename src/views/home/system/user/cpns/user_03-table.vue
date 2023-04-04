@@ -11,7 +11,7 @@
       <el-table-column fixed align="center" type="selection" width="55" />
       <template v-for="(item, index) in userTableColumnData" :key="index">
         <el-table-column
-          v-if="item.label === '均价图'"
+          v-if="item.type === 'img'"
           align="center"
           :prop="item.prop"
           :label="item.label"
