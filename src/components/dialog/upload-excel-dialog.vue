@@ -35,7 +35,7 @@
             <span>{{ dialogData.backBtnText }}</span>
           </el-button>
           <el-button
-            :color="commonBtnColor.btnCommitColor"
+            :color="commonBtnColor.btnPrimaryColor"
             @click="commitBtnClick()"
           >
             <span>{{ dialogData.commitBtnText }}</span>
