@@ -15,6 +15,8 @@
           align="center"
           :prop="item.prop"
           :label="item.label"
+          show-overflow-tooltip
+          :render-header="renderElHeader"
         >
           <template #default="scope">
             <el-image
@@ -32,6 +34,8 @@
           align="center"
           :prop="item.prop"
           :label="item.label"
+          show-overflow-tooltip
+          :render-header="renderElHeader"
         />
       </template>
     </el-table>
@@ -53,6 +57,7 @@
 /*----- 引入配置项 -----*/
 import { tableHeaderStyle } from '@/config/common/style'
 import { userTableColumnData, userTableData } from '@/config/home/system/user'
+import { renderElHeader } from '@/utils/format/render-el-header'
 
 // 子传父 绑定事件
 const emits = defineEmits([
