@@ -40,6 +40,6 @@ const loginClick = () => {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: url('@/assets/img/common/bg.jpg') center/cover no-repeat;
+  background: url('@/assets/img/login/bg.png') center/cover no-repeat;
 }
 </style>
