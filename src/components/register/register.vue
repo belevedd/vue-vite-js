@@ -118,10 +118,9 @@ const jumpLoginBtnClick = () => {
 .register-template {
   width: 465px;
   padding: 50px 55px;
-  color: #fff;
-  background-color: var(--login-background-color);
+  background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 20px var(--login-text-color) inset;
+  box-shadow: 0 0 20px rgb(227, 242, 240) inset;
   box-sizing: border-box;
 
   .title {
@@ -143,7 +142,7 @@ const jumpLoginBtnClick = () => {
     }
     .item-checkbox,
     :deep(.el-checkbox__input.is-checked + .el-checkbox__label) {
-      color: #fff;
+      color: #000;
     }
   }
   .btn {
