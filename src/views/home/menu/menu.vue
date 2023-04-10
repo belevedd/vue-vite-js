@@ -50,7 +50,6 @@ import { pathMapToMenu } from '@/utils/menu/map-menus'
 /*---- 获取pinia状态管理数据 ----*/
 const menuStore = useMenuStore()
 const { userMenus } = storeToRefs(menuStore)
-menuStore.getUserMenus()
 
 // 获取当前路由路径
 const route = useRoute()
