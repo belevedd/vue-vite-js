@@ -1,5 +1,6 @@
 import Base64 from 'base-64'
 import { defineStore } from 'pinia'
+import useMenuStore from '@/stores/modules/home/menu'
 import router from '@/router'
 
 const useLoginStore = defineStore('login', {
@@ -16,12 +17,18 @@ const useLoginStore = defineStore('login', {
 
       // 假数据操作
       if (userData.account === 'admin' && userData.password === '123456') {
+        localStorage.setItem('strawberryWebIsLogin', true)
         if (isKeep) {
           userData.password = Base64.encode(userData.password)
           localStorage.setItem('user', JSON.stringify(userData))
         } else {
           localStorage.removeItem('user')
         }
+
+        // 获取菜单
+        const menuStore = useMenuStore()
+        menuStore.getUserMenus()
+
         // 登录成功 路由跳转
         router.push('/home')
         const data = {
