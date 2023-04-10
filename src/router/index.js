@@ -30,9 +30,9 @@ const router = createRouter({
 
 // -导航守卫
 router.beforeEach((to) => {
-  if (to.path !== '/login') {
-    const userMenus = localCache.getCache('userMenus')
-    if (!userMenus) {
+  if (to.path !== '/login' && to.path !== '/register') {
+    const isLogin = localCache.getCache('strawberryWebIsLogin')
+    if (!isLogin) {
       return '/login'
     }
   }
